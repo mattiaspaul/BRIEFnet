@@ -1,5 +1,7 @@
 # BRIEFnet
-Code for MICCAI 2017 paper "BRIEFnet: Deep Pancreas Segmentation using Sparse Dilated Convolutions" by Mattias P. Heinrich and Ozan Oktay.
+Code for MICCAI 2017 paper "BRIEFnet: Deep Pancreas Segmentation using Sparse Dilated Convolutions"
+
+by Mattias P. Heinrich and Ozan Oktay.
 
 Please see http://mpheinrich.de for PDF and more details
 
@@ -20,7 +22,7 @@ bbox=load('boundingboxes_abdomen15.mat');
 crop_data(bbox,in_folder,out_folder); 
 ```
 providing input folder (i.e. the one you extracted the training folder of RawData.zip to) and an output folder. 
-This will generate 30 scans and corresponding (binary) segmentations of sizes 124x84x94.
+This will generate 30 scans and corresponding (binary) segmentations of sizes 124x84x94. This may take more than 1 minute.
 
 ### 3) Install and compile MatConvNet
 https://github.com/vlfeat/matconvnet
@@ -37,7 +39,7 @@ Finally, you need to extract the eigenlibrary files, which are used for the edge
 unix('tar zxf eigen.tar.gz');
 ```
 
-### 4) Load a trained BRIEFnet model and a apply it to a scan (\#7)
+### 4) Load a trained BRIEFnet model and apply it to a scan (\#7)
 We have split the cross-validation in 6 folds of 25 training images. 
 Fold 1: \#6-\#30, Fold 2: \#1-\#5 and \#11-\#30 etc. For testing \#7, we are using the following commands 
 ```matlab
