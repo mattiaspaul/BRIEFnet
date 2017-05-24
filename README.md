@@ -52,6 +52,6 @@ segmentTestGT=load_untouch_nii(['pancreas/seg7_res.nii.gz']); segmentTestGT=segm
 dice1(segmentation,segmentTestGT)
 ```
 
-If you find any problems or need help, feel free to contact me at lastname@uni-luebeck.de
+If you find any problems or need help, feel free to contact me at lastname @ uni-luebeck.de
 
 Mattias Heinrich
