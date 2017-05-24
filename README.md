@@ -50,7 +50,11 @@ We can evaluate the quality of the segmentation obtained with BRIEFnet, by calcu
 ```matlab
 segmentTestGT=load_untouch_nii(['pancreas/seg7_res.nii.gz']); segmentTestGT=segmentTestGT.img;
 dice1(segmentation,segmentTestGT)
+fused=overlayparula(probabilities(:,:,46),img1(:,:,46));
+figure; imshow(flip(permute(fused,[2,1,3]),1));
 ```
+
+TODO: how to train a model with your own data.
 
 If you find any problems or need help, feel free to contact me at lastname @ uni-luebeck.de
 
