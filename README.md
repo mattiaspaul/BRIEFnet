@@ -14,9 +14,10 @@ you will only need to download RawData.zip (which has a size of 1.53 GBytes and 
 In case you have not used nifti files in MATLAB before install the toolbox of Jimmy Shen: http://de.mathworks.com/matlabcentral/fileexchange/8797-tools-for-nifti-and-analyze-image
 
 Once you have obtained the training data, it should be cropped using the provided bounding boxes (boundingboxes_abdomen15.mat). Run the script the following way:
+```matlab
 bbox=load('boundingboxes_abdomen15.mat');
 crop_data(bbox,in_folder,out_folder); 
-
+```
 providing input folder (i.e. the one you extracted the training folder of RawData.zip to) and an output folder. 
 This will generate 30 scans and corresponding (binary) segmentations of sizes 124x84x94.
 
