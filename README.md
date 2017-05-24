@@ -1,6 +1,7 @@
 # BRIEFnet
-Code for MICCAI 2017 paper "BRIEFnet: Deep Pancreas Segmentation using Sparse Dilated Convolutions" by Mattias P. Heinrich and Ozan Oktay
-please see http://mpheinrich.de for PDF and more details
+Code for MICCAI 2017 paper "BRIEFnet: Deep Pancreas Segmentation using Sparse Dilated Convolutions" by Mattias P. Heinrich and Ozan Oktay.
+
+Please see http://mpheinrich.de for PDF and more details
 
 ## Prerequisites to run example
 
