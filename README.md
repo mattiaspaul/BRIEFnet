@@ -21,7 +21,7 @@ Once you have obtained the training data, it should be cropped using the provide
 bbox=load('boundingboxes_abdomen15.mat');
 crop_data(bbox,in_folder,out_folder); 
 ```
-providing input folder (i.e. the one you extracted the training folder of RawData.zip to) and an output folder. 
+providing input folder (i.e. the one you extracted the training folder of RawData.zip to) and an output folder (here 'pancreas'). 
 This will generate 30 scans and corresponding (binary) segmentations of sizes 124x84x94. This may take more than 1 minute.
 
 ### 3) Install and compile MatConvNet
