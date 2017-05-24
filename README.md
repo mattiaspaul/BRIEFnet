@@ -46,7 +46,7 @@ netDAG=dagnn.DagNN.loadobj(S.model);
 [imCoarse,imLocal,img1]=prepare_data_individual_scan('pancreas/img7_res.nii.gz');
 [probabilities,segmentation]=apply_model(netDAG,imCoarse,imLocal,img1);
 ```
-We can evaluate the quality of the segmentation obtained with BRIEFnet, by calculating the Dice overlap with the original and visualise an overlay using:
+We can evaluate the quality of the segmentation obtained with BRIEFnet, by calculating the Dice overlap (which should be 60%) with the ground truth and visualise an overlay using:
 ```matlab
 segmentTestGT=load_untouch_nii(['pancreas/seg7_res.nii.gz']); segmentTestGT=segmentTestGT.img;
 dice1(segmentation,segmentTestGT)
