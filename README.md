@@ -1,5 +1,5 @@
 # BRIEFnet
-Code for MICCAI 2017 paper
+Code for MICCAI 2017 paper "BRIEFnet: Deep Pancreas Segmentation using Sparse Dilated Convolutions" by Mattias P. Heinrich and Ozan Oktay
 please see http://mpheinrich.de for PDF and more details
 
 ## Prerequisites to run example
@@ -31,9 +31,26 @@ Add the following two custom files for BRIEFnet into the folder /matlab/+dagnn/
 
 Mult.m and BRIEF.m
 
+Finally, you need to extract the eigenlibrary files, which are used for the edge-preserving smoothing:
+```matlab
+unix('tar zxf eigen.tar.gz');
+```
 
 ### 4) Load a trained BRIEFnet model and a apply it to a scan (\#7)
 We have split the cross-validation in 6 folds of 25 training images. 
 Fold 1: \#6-\#30, Fold 2: \#1-\#5 and \#11-\#30 etc. For testing \#7, we are using the following commands 
+```matlab
+S=load('briefnet_fold2.mat');
+netDAG=dagnn.DagNN.loadobj(S.model);
+[imCoarse,imLocal,img1]=prepare_data_individual_scan('pancreas/img7_res.nii.gz');
+[probabilities,segmentation]=apply_model(netDAG,imCoarse,imLocal,img1);
+```
+We can evaluate the quality of the segmentation obtained with BRIEFnet, by calculating the Dice overlap with the original and visualise an overlay using:
+```matlab
+segmentTestGT=load_untouch_nii(['pancreas/seg7_res.nii.gz']); segmentTestGT=segmentTestGT.img;
+dice1(segmentation,segmentTestGT)
+```
 
-load models/briefnet_fold2.mat
+If you find any problems or need help, feel free to contact me at lastname@uni-luebeck.de
+
+Mattias Heinrich
